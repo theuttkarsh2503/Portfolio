@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Uttkarsh - Full Stack Web Developer portfolio showcasing skills, projects, and contact details.">
+  <meta name="description" content="Premium full stack developer portfolio for Uttkarsh featuring modern UI, glassmorphism, projects, and contact details.">
   <title>Uttkarsh | Full Stack Web Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -375,12 +375,20 @@
       position: relative;
     }
 
+    .hero-subtitle {
+      margin-top: 0.9rem;
+      color: #dfe8ff;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      letter-spacing: 0.02em;
+    }
+
     .hero-role {
       display: flex;
       gap: 0.8rem;
       align-items: center;
       flex-wrap: wrap;
-      margin: 1rem 0;
+      margin: 1rem 0 0.35rem;
     }
 
     .hero-role span:first-child {
@@ -392,6 +400,11 @@
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .hero-role p {
+      color: #cfdafe;
+      font-size: 0.98rem;
     }
 
     .hero-copy {
@@ -558,6 +571,45 @@
       align-content: start;
     }
 
+    .availability-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: fit-content;
+      margin: 1.25rem 0 1rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      color: #d9fff4;
+      background: rgba(62, 243, 192, 0.08);
+      border: 1px solid rgba(62, 243, 192, 0.16);
+      font-size: 0.92rem;
+    }
+
+    .availability-line::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 14px rgba(62, 243, 192, 0.75);
+    }
+
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .stack-list span {
+      padding: 0.5rem 0.78rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #d8e3ff;
+      font-size: 0.85rem;
+    }
+
     .highlight-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -574,6 +626,18 @@
       padding: 1.35rem;
       position: relative;
       overflow: hidden;
+    }
+
+    .skill-card:hover .icon-badge,
+    .skill-card:focus-within .icon-badge {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 14px 28px rgba(120, 231, 255, 0.16);
+      border-color: rgba(120, 231, 255, 0.24);
+    }
+
+    .skill-card:hover h3,
+    .skill-card:focus-within h3 {
+      color: #f8fbff;
     }
 
     .tilt-card {
@@ -636,6 +700,12 @@
       color: var(--accent);
       background: rgba(120, 231, 255, 0.08);
       border: 1px solid rgba(120, 231, 255, 0.14);
+      transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+    }
+
+    .icon-badge svg {
+      width: 1.3rem;
+      height: 1.3rem;
     }
 
     .skill-head span:last-child {
@@ -667,6 +737,12 @@
       transform: scaleX(1);
     }
 
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
     .project-index {
       width: fit-content;
       padding: 0.42rem 0.72rem;
@@ -692,6 +768,30 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: #dbe5ff;
       font-size: 0.82rem;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    .project-actions .project-link {
+      flex: 1 1 11rem;
+    }
+
+    .project-link.primary {
+      border: 0;
+      background: linear-gradient(135deg, var(--accent), #6ca9ff 60%, var(--accent-2));
+      color: #04101d;
+      font-weight: 700;
+      box-shadow: 0 12px 28px rgba(120, 231, 255, 0.18);
+    }
+
+    .project-link.secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: #dfe8ff;
     }
 
     .contact-stack,
@@ -779,10 +879,11 @@
     .footer-wrap {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       gap: 1rem;
       padding: 1.2rem 1.4rem;
       border-radius: 999px;
+      text-align: center;
     }
 
     .reveal {
@@ -1094,13 +1195,14 @@
         <div class="hero-grid">
           <div class="hero-card glass reveal tilt-card">
             <h1>Hi, I'm <span class="accent-text">Uttkarsh</span></h1>
+            <p class="hero-subtitle">Full Stack Web Developer</p>
 
             <div class="hero-role">
-              <span>Available for work</span>
-              <p>Full Stack Web Developer</p>
+              <span>Open for freelance work</span>
+              <p>Modern websites, scalable APIs, and polished product experiences.</p>
             </div>
 
-            <p class="hero-copy">I build modern, fast, and scalable web applications with thoughtful design, clean architecture, and premium user experiences that feel sharp on every screen.</p>
+            <p class="hero-copy">I build modern, fast, and responsive web applications that help businesses grow &#128640;</p>
 
             <div class="hero-actions">
               <a class="btn" href="#contact">
@@ -1132,27 +1234,27 @@
             <div class="status">
               <span class="pulse" aria-hidden="true"></span>
               <div>
-                <h3>Modern stack, polished execution</h3>
-                <p>Frontend clarity with backend reliability.</p>
+                <h3>Premium full stack delivery</h3>
+                <p>Built for brands, startups, and businesses that need speed and clarity.</p>
               </div>
             </div>
 
             <div class="mini-grid">
               <div class="mini-card">
-                <strong>Frontend</strong>
-                <span>HTML, CSS, JavaScript, React</span>
+                <strong>Frontend Systems</strong>
+                <span>HTML, CSS, JavaScript, and React interfaces.</span>
               </div>
               <div class="mini-card">
-                <strong>Backend</strong>
-                <span>Node.js and MongoDB workflows</span>
+                <strong>Backend Logic</strong>
+                <span>Node.js APIs and MongoDB-backed workflows.</span>
               </div>
               <div class="mini-card">
-                <strong>Focus</strong>
-                <span>Performance and usability</span>
+                <strong>Business Focus</strong>
+                <span>Responsive products designed to convert and scale.</span>
               </div>
               <div class="mini-card">
-                <strong>Style</strong>
-                <span>Clean, futuristic UI systems</span>
+                <strong>Delivery Style</strong>
+                <span>Clean UI, smooth motion, and maintainable code.</span>
               </div>
             </div>
           </aside>
@@ -1169,28 +1271,37 @@
 
         <div class="about-grid">
           <article class="about-card glass reveal tilt-card">
-            <p>Uttkarsh is a passionate full stack developer who enjoys turning ideas into responsive, production-ready web experiences. He combines modern visual design with clean engineering to create interfaces that are intuitive, fast, and built to scale.</p>
-            <p>Working across HTML, CSS, JavaScript, React, Node.js, and MongoDB, he focuses on maintainable code, smooth user journeys, and digital products that balance performance with premium presentation.</p>
+            <p>Uttkarsh builds modern full stack products with a strong focus on performance, business clarity, and premium user experience. His work combines conversion-aware frontend design with dependable backend logic, helping companies launch interfaces that feel sharp, fast, and trustworthy.</p>
+            <p>He works comfortably across the full web stack, delivering responsive experiences, reusable components, scalable APIs, and maintainable architecture for ambitious digital products.</p>
+            <p class="availability-line">Available for freelance work</p>
+            <div class="stack-list" aria-label="Core skills">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
           </article>
 
           <aside class="about-card glass reveal delay-1 tilt-card">
-            <h3>What I bring</h3>
+            <h3>What clients can expect</h3>
             <div class="highlight-grid">
               <div class="highlight">
                 <strong>Modern UI</strong>
-                <p>Clean interfaces with intentional spacing, motion, and polish.</p>
+                <p>Clean interfaces with thoughtful typography, spacing, and visual depth.</p>
               </div>
               <div class="highlight">
-                <strong>Full Stack Thinking</strong>
-                <p>Strong handling of both frontend experiences and backend structure.</p>
+                <strong>Full Stack Execution</strong>
+                <p>Frontend polish backed by practical architecture and backend reliability.</p>
               </div>
               <div class="highlight">
                 <strong>Responsive Craft</strong>
-                <p>Layouts that adapt smoothly from mobile screens to desktops.</p>
+                <p>Layouts and interactions that stay strong from mobile to desktop.</p>
               </div>
               <div class="highlight">
                 <strong>Scalable Code</strong>
-                <p>Maintainable solutions built with performance and clarity in mind.</p>
+                <p>Maintainable solutions built for performance, iteration, and growth.</p>
               </div>
             </div>
           </aside>
@@ -1208,7 +1319,11 @@
         <div class="skill-grid">
           <article class="skill-card glass reveal tilt-card">
             <div class="skill-head">
-              <span class="icon-badge">H</span>
+              <span class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M6 4V20M18 4V20M6 12H18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </span>
               <span>95%</span>
             </div>
             <h3>HTML</h3>
@@ -1220,7 +1335,11 @@
 
           <article class="skill-card glass reveal delay-1 tilt-card">
             <div class="skill-head">
-              <span class="icon-badge">C</span>
+              <span class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 5H18M7 12H16M7 19H14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </span>
               <span>92%</span>
             </div>
             <h3>CSS</h3>
@@ -1232,7 +1351,11 @@
 
           <article class="skill-card glass reveal delay-2 tilt-card">
             <div class="skill-head">
-              <span class="icon-badge">J</span>
+              <span class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8 7L4 12L8 17M16 7L20 12L16 17M13 5L11 19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <span>90%</span>
             </div>
             <h3>JavaScript</h3>
@@ -1244,7 +1367,14 @@
 
           <article class="skill-card glass reveal tilt-card">
             <div class="skill-head">
-              <span class="icon-badge">R</span>
+              <span class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="1.9" stroke="currentColor" stroke-width="1.6"/>
+                  <ellipse cx="12" cy="12" rx="8" ry="3.2" stroke="currentColor" stroke-width="1.5"/>
+                  <ellipse cx="12" cy="12" rx="8" ry="3.2" transform="rotate(60 12 12)" stroke="currentColor" stroke-width="1.5"/>
+                  <ellipse cx="12" cy="12" rx="8" ry="3.2" transform="rotate(120 12 12)" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </span>
               <span>88%</span>
             </div>
             <h3>React</h3>
@@ -1256,7 +1386,11 @@
 
           <article class="skill-card glass reveal delay-1 tilt-card">
             <div class="skill-head">
-              <span class="icon-badge">N</span>
+              <span class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M6 18V6L18 18V6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <span>86%</span>
             </div>
             <h3>Node.js</h3>
@@ -1268,7 +1402,13 @@
 
           <article class="skill-card glass reveal delay-2 tilt-card">
             <div class="skill-head">
-              <span class="icon-badge">M</span>
+              <span class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <ellipse cx="12" cy="6.5" rx="6" ry="2.8" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M6 6.5V17.5C6 19 8.7 20.2 12 20.2C15.3 20.2 18 19 18 17.5V6.5" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M6 12C6 13.5 8.7 14.7 12 14.7C15.3 14.7 18 13.5 18 12" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </span>
               <span>84%</span>
             </div>
             <h3>MongoDB</h3>
@@ -1284,44 +1424,53 @@
       <div class="container">
         <div class="section-title reveal">
           <span class="eyebrow">Projects</span>
-          <h2>Selected work that blends clarity, interaction, and modern presentation.</h2>
+          <h2>Selected builds that combine modern design, responsiveness, and strong product thinking.</h2>
         </div>
 
         <div class="projects-grid">
           <article class="project-card glass reveal tilt-card">
             <span class="project-index">Project 01</span>
-            <h3>Portfolio Website</h3>
-            <p>A sleek personal portfolio designed to showcase services, strengths, and featured work with smooth motion and a premium dark interface.</p>
+            <h3>Task Manager Web App</h3>
+            <p>Manage tasks with local storage and responsive UI, designed for quick updates, clear priorities, and smooth day-to-day usage.</p>
             <div class="project-tech">
-              <span>HTML</span>
-              <span>CSS</span>
               <span>JavaScript</span>
+              <span>Local Storage</span>
+              <span>Responsive UI</span>
             </div>
-            <a class="project-link" href="#contact">Discuss Similar Project</a>
+            <div class="project-actions">
+              <a class="project-link primary" href="#contact" title="Request live demo for Task Manager Web App">Live Demo</a>
+              <a class="project-link secondary" href="https://github.com/theuttkarsh2503" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
           </article>
 
           <article class="project-card glass reveal delay-1 tilt-card">
             <span class="project-index">Project 02</span>
-            <h3>To-Do App</h3>
-            <p>A fast productivity app for organizing tasks with intuitive interactions, clean layouts, and a responsive workflow-focused experience.</p>
+            <h3>Portfolio Website</h3>
+            <p>Personal responsive portfolio with modern UI, premium gradients, smooth motion, and glassmorphism styling for a strong personal brand.</p>
             <div class="project-tech">
-              <span>React</span>
-              <span>JavaScript</span>
-              <span>UI/UX</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Glassmorphism</span>
             </div>
-            <a class="project-link" href="#contact">Request Demo</a>
+            <div class="project-actions">
+              <a class="project-link primary" href="#home" title="Preview portfolio website section">Live Demo</a>
+              <a class="project-link secondary" href="https://github.com/theuttkarsh2503" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
           </article>
 
           <article class="project-card glass reveal delay-2 tilt-card">
             <span class="project-index">Project 03</span>
-            <h3>Landing Page</h3>
-            <p>A conversion-oriented landing page built with bold sections, persuasive calls to action, and crisp responsive styling for modern brands.</p>
+            <h3>Business Landing Page</h3>
+            <p>High-converting landing page design for businesses, built to present offers clearly and move visitors toward action.</p>
             <div class="project-tech">
-              <span>Responsive</span>
-              <span>Animation</span>
-              <span>Branding</span>
+              <span>Landing Page</span>
+              <span>Conversion UI</span>
+              <span>Business Design</span>
             </div>
-            <a class="project-link" href="#contact">Start a Project</a>
+            <div class="project-actions">
+              <a class="project-link primary" href="#contact" title="Request live demo for Business Landing Page">Live Demo</a>
+              <a class="project-link secondary" href="https://github.com/theuttkarsh2503" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
           </article>
         </div>
       </div>
@@ -1331,13 +1480,13 @@
       <div class="container">
         <div class="section-title reveal">
           <span class="eyebrow">Contact</span>
-          <h2>Let's build something modern, fast, and meaningful together.</h2>
+          <h2>Let's work together &#128640;</h2>
         </div>
 
         <div class="contact-grid">
           <article class="contact-card glass reveal tilt-card">
             <h3>Reach out directly</h3>
-            <p style="margin: 0.9rem 0 1.4rem;">Open to freelance projects, collaborations, and full stack opportunities that need polished execution.</p>
+            <p style="margin: 0.9rem 0 1.4rem;">If you need a premium portfolio, responsive website, landing page, or full stack web application, let's talk about how we can build it well.</p>
 
             <div class="contact-stack">
               <a class="contact-link" href="mailto:theuttkarshyadav@gmail.com">
@@ -1370,7 +1519,7 @@
 
           <aside class="contact-form glass reveal delay-1 tilt-card">
             <h3>Send a message</h3>
-            <p style="margin: 0.9rem 0 1.4rem;">Share your idea and I'll open your mail app with a ready-to-send message.</p>
+            <p style="margin: 0.9rem 0 1.4rem;">Share your idea, timeline, or business goal and I'll open your mail app with a ready-to-send message.</p>
 
             <form id="contact-form" novalidate>
               <div class="field">
@@ -1400,8 +1549,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-wrap glass">
-        <p>Uttkarsh</p>
-        <p>&copy; 2026 All rights reserved.</p>
+        <p>&copy; 2026 Uttkarsh | All rights reserved</p>
       </div>
     </div>
   </footer>
