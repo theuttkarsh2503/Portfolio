@@ -7,7 +7,7 @@
   <title>Uttkarsh | Full Stack Web Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050816;
@@ -41,7 +41,7 @@
 
     body {
       position: relative;
-      font-family: "Outfit", sans-serif;
+      font-family: "Poppins", sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at 10% 15%, rgba(120, 231, 255, 0.14), transparent 22%),
@@ -150,7 +150,8 @@
       background: linear-gradient(180deg, rgba(18, 26, 53, 0.78), rgba(9, 13, 29, 0.85));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .section {
@@ -252,6 +253,15 @@
       gap: 1rem;
       padding: 1rem 1.15rem;
       border-radius: 999px;
+      transition: background var(--ease), border-color var(--ease), box-shadow var(--ease), backdrop-filter var(--ease);
+    }
+
+    .nav.scrolled {
+      background: linear-gradient(180deg, rgba(13, 20, 44, 0.88), rgba(8, 12, 28, 0.94));
+      border-color: rgba(120, 231, 255, 0.24);
+      box-shadow: 0 18px 40px rgba(2, 6, 20, 0.52);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
     .brand {
@@ -411,7 +421,27 @@
       max-width: 42rem;
       margin-bottom: 1.7rem;
       font-size: 1.05rem;
+      line-height: 1.85;
       overflow-wrap: anywhere;
+    }
+
+    .hero-copy.typing {
+      min-height: 3.9rem;
+    }
+
+    .hero-copy.typing::after {
+      content: "";
+      display: inline-block;
+      width: 0.55rem;
+      height: 1.1em;
+      margin-left: 0.25rem;
+      border-right: 2px solid rgba(120, 231, 255, 0.78);
+      vertical-align: -0.15em;
+      animation: caretBlink 900ms steps(1, end) infinite;
+    }
+
+    .hero-copy.typing.is-complete::after {
+      opacity: 0;
     }
 
     .hero-actions {
@@ -475,6 +505,7 @@
     .btn-secondary:focus-visible,
     .project-link:focus-visible {
       transform: translateY(-2px);
+      box-shadow: 0 0 0 1px rgba(120, 231, 255, 0.2), 0 20px 44px rgba(6, 14, 36, 0.56);
     }
 
     .btn:hover::before,
@@ -484,6 +515,13 @@
     .btn-secondary:focus-visible::before,
     .project-link:focus-visible::before {
       transform: rotate(18deg) translateX(420%);
+    }
+
+    .btn:hover,
+    .btn:focus-visible,
+    .project-link.primary:hover,
+    .project-link.primary:focus-visible {
+      box-shadow: 0 0 0 1px rgba(120, 231, 255, 0.24), 0 0 38px rgba(120, 231, 255, 0.28), 0 18px 44px rgba(5, 13, 34, 0.52);
     }
 
     .hero-stats,
@@ -626,6 +664,15 @@
       padding: 1.35rem;
       position: relative;
       overflow: hidden;
+    }
+
+    .skill-card:hover,
+    .skill-card:focus-within,
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-6px);
+      border-color: rgba(120, 231, 255, 0.26);
+      box-shadow: 0 28px 78px rgba(2, 6, 20, 0.66);
     }
 
     .skill-card:hover .icon-badge,
@@ -927,6 +974,17 @@
       }
     }
 
+    @keyframes caretBlink {
+      0%,
+      45% {
+        opacity: 1;
+      }
+      46%,
+      100% {
+        opacity: 0;
+      }
+    }
+
     @media (max-width: 1180px) {
       .container {
         width: min(1100px, calc(100% - 2rem));
@@ -1180,6 +1238,7 @@
         </button>
 
         <div class="nav-links" id="nav-links">
+          <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
@@ -1194,7 +1253,7 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-card glass reveal tilt-card">
-            <h1>Hi, I'm <span class="accent-text">Uttkarsh</span></h1>
+            <h1>Hi, I&rsquo;m <span class="accent-text">Uttkarsh</span></h1>
             <p class="hero-subtitle">Full Stack Web Developer</p>
 
             <div class="hero-role">
@@ -1202,7 +1261,7 @@
               <p>Modern websites, scalable APIs, and polished product experiences.</p>
             </div>
 
-            <p class="hero-copy">I build modern, fast, and responsive web applications that help businesses grow &#128640;</p>
+            <p class="hero-copy typing" data-text="I build modern, fast, and high-converting websites that help businesses grow &#128640;">I build modern, fast, and high-converting websites that help businesses grow &#128640;</p>
 
             <div class="hero-actions">
               <a class="btn" href="#contact">
@@ -1211,7 +1270,7 @@
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
-              <a class="btn-secondary" href="#projects">View Projects</a>
+              <a class="btn-secondary" href="#projects">View Work</a>
             </div>
 
             <div class="hero-stats">
@@ -1266,13 +1325,13 @@
       <div class="container">
         <div class="section-title reveal">
           <span class="eyebrow">About</span>
-          <h2>Building thoughtful full stack products that feel modern and dependable.</h2>
+          <h2>I engineer high-impact digital products that combine sharp design with reliable execution.</h2>
         </div>
 
         <div class="about-grid">
           <article class="about-card glass reveal tilt-card">
-            <p>Uttkarsh builds modern full stack products with a strong focus on performance, business clarity, and premium user experience. His work combines conversion-aware frontend design with dependable backend logic, helping companies launch interfaces that feel sharp, fast, and trustworthy.</p>
-            <p>He works comfortably across the full web stack, delivering responsive experiences, reusable components, scalable APIs, and maintainable architecture for ambitious digital products.</p>
+            <p>I help founders and businesses turn ideas into premium web experiences that look world-class and perform under real growth pressure. Every build is shaped around conversion, speed, and clarity so your site does more than look good.</p>
+            <p>From polished frontend systems to scalable backend architecture, I deliver full stack solutions with clean code, strategic UX decisions, and dependable execution that supports long-term business momentum.</p>
             <p class="availability-line">Available for freelance work</p>
             <div class="stack-list" aria-label="Core skills">
               <span>HTML</span>
@@ -1431,7 +1490,7 @@
           <article class="project-card glass reveal tilt-card">
             <span class="project-index">Project 01</span>
             <h3>Task Manager Web App</h3>
-            <p>Manage tasks with local storage and responsive UI, designed for quick updates, clear priorities, and smooth day-to-day usage.</p>
+            <p>A productivity-focused web app built for teams and founders who need faster daily execution, clearer priorities, and better task visibility.</p>
             <div class="project-tech">
               <span>JavaScript</span>
               <span>Local Storage</span>
@@ -1446,7 +1505,7 @@
           <article class="project-card glass reveal delay-1 tilt-card">
             <span class="project-index">Project 02</span>
             <h3>Portfolio Website</h3>
-            <p>Personal responsive portfolio with modern UI, premium gradients, smooth motion, and glassmorphism styling for a strong personal brand.</p>
+            <p>A high-converting personal brand website designed to impress clients instantly with premium visuals, trust-building sections, and clear calls to action.</p>
             <div class="project-tech">
               <span>HTML</span>
               <span>CSS</span>
@@ -1461,7 +1520,7 @@
           <article class="project-card glass reveal delay-2 tilt-card">
             <span class="project-index">Project 03</span>
             <h3>Business Landing Page</h3>
-            <p>High-converting landing page design for businesses, built to present offers clearly and move visitors toward action.</p>
+            <p>A conversion-first landing page crafted to communicate value in seconds, reduce friction, and generate more qualified leads for service businesses.</p>
             <div class="project-tech">
               <span>Landing Page</span>
               <span>Conversion UI</span>
@@ -1563,10 +1622,20 @@
     const sections = document.querySelectorAll("main section[id]");
     const revealItems = document.querySelectorAll(".reveal");
     const tiltCards = document.querySelectorAll(".tilt-card");
+    const heroTypingLine = document.querySelector(".hero-copy.typing");
     const contactForm = document.querySelector("#contact-form");
     const formStatus = document.querySelector("#form-status");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const finePointer = window.matchMedia("(pointer: fine)").matches;
+
+    if (nav) {
+      const syncNavState = () => {
+        nav.classList.toggle("scrolled", window.scrollY > 18);
+      };
+
+      syncNavState();
+      window.addEventListener("scroll", syncNavState, { passive: true });
+    }
 
     if (menuToggle && navLinks) {
       menuToggle.addEventListener("click", () => {
@@ -1647,6 +1716,30 @@
       });
     }
 
+    if (heroTypingLine) {
+      const fullText = heroTypingLine.dataset.text || heroTypingLine.textContent.trim();
+
+      if (!prefersReducedMotion) {
+        const glyphs = Array.from(fullText);
+        let index = 0;
+        heroTypingLine.textContent = "";
+
+        const typeNext = () => {
+          if (index <= glyphs.length) {
+            heroTypingLine.textContent = glyphs.slice(0, index).join("");
+            index += 1;
+            window.setTimeout(typeNext, index < 28 ? 32 : 20);
+          } else {
+            heroTypingLine.classList.add("is-complete");
+          }
+        };
+
+        window.setTimeout(typeNext, 260);
+      } else {
+        heroTypingLine.classList.add("is-complete");
+      }
+    }
+
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver((entries, revealObserver) => {
         entries.forEach((entry) => {
@@ -1674,6 +1767,10 @@
             activeId = id;
           }
         });
+
+        if (!activeId && window.scrollY < window.innerHeight * 0.35 && navMap.has("home")) {
+          activeId = "home";
+        }
 
         navAnchors.forEach((link) => {
           const targetId = link.getAttribute("href").replace("#", "");
